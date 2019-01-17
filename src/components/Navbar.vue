@@ -1,0 +1,254 @@
+<template>
+  <div class="header container-fluid p-0">
+    <div class="slide">
+      <!--<img src="@/assets/header2.jpg" class="img img-fluid w-100"/>
+      <div class="slide-text text-white text-left d-flex" :style="{height: height+'px'}">
+        <div class="tst mr-auto align-self-center">
+          <div class="slide-title">
+            <h1>Você <strong>sonha</strong>,</h1>
+            <h1>a gente <strong>SOMA</strong>.</h1>
+          </div>
+
+          <button class="btn-link" @click="scroll({link: '#obras'}, $event)">
+            <div class="confira">
+              <a class="btn btn-outline-light text-center arrow-down rounded-circle">
+                <font-awesome-icon class="arrow-down-icon" icon="arrow-down"></font-awesome-icon>
+              </a>
+              <strong> Confira nosso portfólio</strong>
+            </div>
+          </button>
+        </div>
+      </div>-->
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+      <a class="navbar-brand" href="/"><img src="@/assets/logo.png" class="img img-fluid"/></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapseNav" aria-controls="collapseNav"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-between align-items-center w-100" id="collapseNav">
+        <ul class="navbar-nav mt-2 mt-lg-0 ml-auto">
+          <li v-for="(item, index) in menu" :key="index" @click="scroll(item, $event)" class="text-uppercase nav-item">
+            <a class="nav-link" v-bind:href="item.link">{{item.name}}</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="color: #bbb !important;" href="https://www.instagram.com/somaengenharia/"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram']"></font-awesome-icon></a>
+          </li>
+        </ul>
+        <!--<ul class="navbar-nav flex-row justify-content-center flex-nowrap mt-2 mt-lg-0">
+          <li class="nav-item sm-item">
+            <a class="nav-link" href="#"><font-awesome-icon :icon="{prefix: 'fab', iconName: 'instagram'}"/></a>
+          </li>
+        </ul>-->
+      </div>
+    </nav>
+    <div class="">
+      <b-carousel id="carousel-banner"
+                  class="p-0"
+                  controls
+                  indicators
+                  background="#fff"
+                  >
+        <b-carousel-slide :img-src="require('@/assets/banners/01.jpg')">
+        </b-carousel-slide>
+        <b-carousel-slide :img-src="require('@/assets/banners/02.jpg')">
+        </b-carousel-slide>
+
+      </b-carousel>
+    </div>
+  </div>
+</template>
+
+<script>
+import jQuery from 'jquery'
+let $ = jQuery
+
+export default {
+  data () {
+    return {
+      menu: [
+        {name: 'quem somos', link: '#quemsomos'},
+        {name: 'portfólio', link: '#obras'},
+        {name: 'serviços', link: '#servicos'},
+        {name: 'contato', link: '#contato'}
+      ],
+      width: 0,
+      height: 0
+    }
+  },
+  created() {
+    this.height = $('.slide').height();
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        this.width = $('.slide').width();
+        this.height = $('.slide').height();
+      });
+    })
+  },
+  methods: {
+    scroll(obj, e) {
+      e.preventDefault();
+      var to = obj.link;
+      $('html, body').animate({
+        scrollTop: $(to).offset().top
+      }, 1000);
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .navbar {
+    padding: 0px 48px;
+    background: #fff;
+    color: #414141;
+    z-index: 110; 
+    border: none;
+  }
+
+  .carousel-item {
+    border: none;
+  }
+
+  .nav-item a {
+    color: #414141 !important;
+  }
+
+  .navbar-brand {
+    width: 8%;
+    padding: 5px;
+  }
+
+  .slide-text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 156px;
+  }
+
+  .slide-text h1 {
+    font-size: 5vw;
+  }
+
+  .slide-text a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /*.arrow-down {
+    border: 2px solid #fff;
+    border-radius: 512px;
+    padding: 8px;
+    display: inline;
+
+    background: transparent;
+
+    transition: background 0.2s ease;
+  }*/
+
+  .arrow-down {
+    font-size: 24px;
+    border-width: 2px;
+  }
+
+  .arrow-down .arrow-down-icon {
+    padding: 4px;
+    color: #fff;
+    transition: color 0.2s ease;
+  }
+
+  .confira {
+    font-size: 2vw;
+    padding: 32px 0px;
+  }
+
+  .confira strong {
+    font-size: 24px;
+  }
+
+  .btn-link {
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-link:hover .arrow-down {
+    background: #fff;
+    transition: background 0.2s ease;
+  }
+
+  .btn-link:hover .arrow-down-icon {
+    color: #000;
+
+    transition: color 0.2s ease;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      background: #fff;
+    }
+
+    .navbar-toggler {
+      border-color: #414141;
+    }
+
+    .navbar-brand {
+      width: 13%;
+      padding: 10px;
+    }
+
+    .nav-link {
+      color: #000 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-text {
+      padding: 0px 0px 0px 108px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .navbar-brand {
+      width: 15vw;
+      padding: 8px;
+    }
+
+    .arrow-down {
+      font-size: 18px;
+    }
+
+    .arrow-down .arrow-down-icon {
+      padding: 2px;
+    }
+
+    .confira {
+      padding: 8px 0px;
+    }
+
+    .slide-title {
+      padding-top: 36px;
+    }
+
+    .slide-text {
+      padding: 32px;
+    }
+
+    .confira strong {
+      font-size: 18px;
+    }
+
+    .navbar {
+      padding: 0px 24px;
+    }
+  }
+
+  .instagram-icon {
+    font-size: 24px;
+  }
+  
+</style>
