@@ -1,84 +1,75 @@
 <template>
   <div class="quemsomos row" id="quemsomos">
     <div class="row mx-auto w-100">
-      <div class="col-md-6 col-12 text-left align-self-center p-4">
-        <h3 class="quemsomos-header">Quem Somos</h3>
-        <p class="quemsomos-content">Somos uma empresa jovem e altamente profissional. A qualidade das nossas execuções caminha em equilíbrio com a relação pessoal e profissional que construímos com os clientes e toda a equipe envolvida em cada projeto.</p>
-      </div>
       <div class="col-md-6 col-12 align-self-center text-white quemsomos-texto">
-        <div class="row">
-          <div :class="'col-12 col-md-4 align-self-center'" v-for="(cont,index) in contents" :key="index">
-            <!--<button class="btn btn-link" type="button" data-toggle="popover" data-placement="top" data-content="Teste"><h3 class="cont-header">{{cont.title}}</h3></button>-->
-            <!--<b-btn v-b-popover.hover="'<ul><li>'+cont.text+'</li></ul>'" :title="cont.title" variant="link"><h3 class="cont-header">{{cont.title}}</h3></b-btn>-->
-            <b-btn :id="'popover-btn-'+cont.name" variant="link"><h3 class="cont-header">{{cont.title}}</h3></b-btn>
-            <b-popover :target="'popover-btn-'+cont.name" :title="cont.title" triggers="hover" placement="top">
-              <p v-if="!cont.list">{{cont.text}}</p>
-              <ul v-else>
-                <li class="cont-list text-left" v-for="(item,i) in cont.list" :key="i">
-                  {{item}}
-                </li>
-              </ul>
-            </b-popover>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
-            <!--<p v-if="!cont.list" class="cont-text">{{cont.text}}</p>
-            <ul class="col-6 cont-ul-list" v-else>
-              <li class="cont-list text-left" v-for="(item,i) in cont.list" :key="i">
-                {{item}}
-              </li>
-            </ul>
-            <ul class="col-6 cont-ul-list">
-              <li class="cont-list text-left" v-for="(item,i) in cont.list2" :key="i">
-                {{item}} 
-              </li>
-            </ul>-->
-          </div>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img class="d-block w-100" src="@/assets/missao-bg.jpg">
+            <div class="carousel-caption">
+                <h1>MISSÃO</h1>
+                <p>Entregar sonhos e projetos oferecendo um serviço de excelência e qualidade em cada detalhe por meio de um atendimento personalizado, inovador e comprometimento com a cidadania com custo compatível.</p>
+                <br><br>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="@/assets/visao-bg.jpg">
+            <div class="carousel-caption">
+                <h1>VISÃO</h1>
+                <p>Em cinco anos queremos ser referência em qualidade e eficiência no setor da construção civil, estando sempre comprometida com qualidade e transparência.</p>
+                <br><br><br>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="@/assets/valores-bg.jpg">
+            <div class="carousel-caption">
+                <h1>VALORES</h1>
+                <p>Foco e compromisso com o cliente, respeitando sempre seu investimento;
+                    <br>Inovação contínua, treinamento e capacitação;
+                    <br>Ética e honestidade com clientes, colaboradores e fornecedores;
+                    <br>Segurança e responsabilidade;
+                    <br>Excelência operacional;
+                    <br>Colaboração e respeito, fortalecendo sempre o trabalho em equipe;
+                    <br>Preservação do meio ambiente;
+                    <br>Comprometimento com a cidadania.</p>
+            </div>
         </div>
       </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+    <div class="col-md-6 col-12 text-left align-self-center p-4">
+      <h3 class="quemsomos-header">Quem Somos</h3>
+      <p class="quemsomos-content">Somos uma empresa jovem e altamente profissional. A qualidade das nossas execuções caminha em equilíbrio com a relação pessoal e profissional que construímos com os clientes e toda a equipe envolvida em cada projeto.</p>
     </div>
   </div>
+  </div>
+
 </template>
 
 <script>
-export default {
-  name: "QuemSomos",
-  data: ()=> {
-    return {
-      contents: [
-        {title: "Missão", name:"missao", text: "Entregar sonhos e projetos oferecendo um serviço de excelência e qualidade em cada detalhe por meio de um atendimento personalizado, inovador e comprometimento com a cidadania com custo compatível."},
-        {title: "Visão", name: "visao", text: "Em cinco anos queremos ser referência em qualidade e eficiência no setor da construção civil, estando sempre comprometida com qualidade e transparência."},
-        {title: "Valores", name: "valores", text: "",
-          list: [
-            "Foco e compromisso com o cliente, respeitando sempre seu investimento;",
-            "Inovação contínua, treinamento e capacitação;",
-            "Ética e honestidade com clientes, colaboradores e fornecedores;",
-            "Segurança e responsabilidade;",
-            "Excelência operacional;",
-            "Colaboração e respeito, fortalecendo sempre o trabalho em equipe;",
-            "Preservação do meio ambiente;",
-            "Comprometimento com a cidadania."
-          ],
-          list1: [
-            "Foco e compromisso com o cliente, respeitando sempre seu investimento;",
-            "Inovação contínua, treinamento e capacitação;",
-            "Ética e honestidade com clientes, colaboradores e fornecedores;",
-            "Segurança e responsabilidade;"
-          ],
-          list2: [
-            "Excelência operacional;",
-            "Colaboração e respeito, fortalecendo sempre o trabalho em equipe;",
-            "Preservação do meio ambiente;",
-            "Comprometimento com a cidadania."
-          ]
-        }
-      ]
-    }
-  }
-}
 </script>
 
 <style scoped>
+    
   .quemsomos {
-    padding: 64px 156px;
+    padding: 0px 156px;
   }
   .quemsomos-header::first-letter {
     border-bottom: 3px solid #fb9527;
@@ -130,9 +121,36 @@ export default {
     background: #fb9527;
   }
 
+  .carousel p {
+    color: #595959;
+    font-size: 14px;
+  }
+
+  .carousel h1 {
+    color: #fb9527;
+  }
+
+  .carousel-indicators {
+     background-color: #fb9527;
+     border-color: #000000;
+  }
+
+  .carousel-indicators .active {
+    background-color: #ffffff !important;
+  }
+
+  .carousel-control-prev span {
+    background-color: #fb9527;
+  }
+
+  .carousel-control-next span {
+    background-color: #fb9527;
+  }
+
+
   @media (max-width: 768px) {
     .quemsomos {
-      padding: 64px 108px;
+      padding: 64px 0px;
     }
   }
 
@@ -143,6 +161,15 @@ export default {
 
     .quemsomos-content {
       width: 100%;
+    }
+
+    .carousel h1 {
+      font-size: 25px;
+      visibility: visible;
+    }
+    .carousel p {
+      font-size: 14px;
+      visibility: visible;
     }
   }
 </style>

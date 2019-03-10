@@ -8,7 +8,7 @@
             :enter-active-class="'animated ' + active_class"
             :leave-active-class="'animated ' + leave_class"
             mode="out-in">
-          <Obra class="obra" @proxObra="proxObra" @obraAnt="obraAnt" v-for="(obra,index) in obras" v-if="index == current" :nome="obra.nome" :key="index"/>
+          <Obra class="obra" @proxObra="proxObra" @obraAnt="obraAnt" v-for="(obra,index) in obras" v-if="index == current" :nome="obra.nome" :local="obra.local" :conclusao="obra.conclusao" :tipo="obra.tipo" :statusobra="obra.statusobra" :area="obra.area" :arquiteto="obra.arquiteto" :fotos="obra.fotos" :key="index"/>
         </transition>
       </div>
     </div>
@@ -16,8 +16,6 @@
 </template>
 
 <script>
-//import img from '@/assets/servicos.jpg'
-
 import Obra from './Obra.vue'
 
 export default {
@@ -26,15 +24,116 @@ export default {
     Obra
   },
   data: ()=> {
-    /*obras: [
-        {nome: "Nome da obra", content: "conteúdo falando sobre a obra", image: img},
-        {nome: "Nome da obra 2", content: "conteúdo falando sobre a obra 2", image: img}
-      ],*/
     return {
+      // Aqui vão as informações de cada obra que estará no portifólio da empresa
       obras: [
-        {nome: "Edifício 1"},
-        {nome: "Edifício 2"}
+        {
+        nome: "Edifício Petrópolis", 
+        tipo: "Residencial",
+        statusobra: "Concluída",
+        local: "Petrópolis, Natal/RN",
+        conclusao: "2016",
+        area: "220m²",
+        arquiteto: "Carol Azevedo / Gabriele Christine",
+        fotos: [
+            { url: require("../assets/fotos/GabrielaChristine/01.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/02.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/03.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/04.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/05.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/06.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/07.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/08.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/09.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/10.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/11.jpg")},
+            { url: require("../assets/fotos/GabrielaChristine/12.jpg")},
+        ]
+        },
+
+        {
+        nome: "OTC – Office Tower Center", 
+        tipo: "Comercial",
+        statusobra: "Concluída",
+        local: "Candelária, Natal/RN",
+        conclusao: "2017",
+        area: "24m²",
+        arquiteto: "Camilla Soares",
+        endereco: "@/assets/missao-bg.jpg",
+        fotos: [
+              { url: require("../assets/fotos/EscritorioSoma/01.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/02.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/03.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/04.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/05.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/06.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/07.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/08.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/09.jpg")},
+              { url: require("../assets/fotos/EscritorioSoma/10.jpg")},
+          ]
+        },
+
+        {
+        nome: "Edifício Saint Charbel", 
+        tipo: "Residencial",
+        statusobra: "Concluída",
+        local: "Capim Macio, Natal/RN",
+        conclusao: "2017",
+        area: "110m²",
+        arquiteto: "Tâmara Fontenelle",
+        endereco: "@/assets/missao-bg.jpg",
+        fotos: [
+              { url: require("../assets/fotos/Fawller/01.jpg")},
+              { url: require("../assets/fotos/Fawller/02.jpg")},
+              { url: require("../assets/fotos/Fawller/03.jpg")},
+              { url: require("../assets/fotos/Fawller/04.jpg")},
+              { url: require("../assets/fotos/Fawller/05.jpg")},
+              { url: require("../assets/fotos/Fawller/06.jpg")},
+              { url: require("../assets/fotos/Fawller/07.jpg")},
+              { url: require("../assets/fotos/Fawller/08.jpg")},
+              { url: require("../assets/fotos/Fawller/09.jpg")},
+              { url: require("../assets/fotos/Fawller/10.jpg")},
+              { url: require("../assets/fotos/Fawller/11.jpg")},
+              { url: require("../assets/fotos/Fawller/12.jpg")},
+              { url: require("../assets/fotos/Fawller/13.jpg")},
+              { url: require("../assets/fotos/Fawller/14.jpg")},
+              { url: require("../assets/fotos/Fawller/15.jpg")},
+              { url: require("../assets/fotos/Fawller/16.jpg")},
+              { url: require("../assets/fotos/Fawller/17.jpg")},
+              { url: require("../assets/fotos/Fawller/18.jpg")},
+              { url: require("../assets/fotos/Fawller/19.jpg")},
+              { url: require("../assets/fotos/Fawller/20.jpg")},
+              { url: require("../assets/fotos/Fawller/21.jpg")},
+              { url: require("../assets/fotos/Fawller/22.jpg")},
+          ]
+        },
+        {
+        nome: "Edifício Lilac", 
+        tipo: "Residencial",
+        statusobra: "Concluída",
+        local: "Lagoa Nova, Natal/RN",
+        conclusao: "2018",
+        area: "160m²",
+        arquiteto: "Gabriela Christine",
+        endereco: "@/assets/missao-bg.jpg",
+        fotos: [
+            { url: require("../assets/fotos/Celeste/01.jpg")},
+            { url: require("../assets/fotos/Celeste/02.jpg")},
+            { url: require("../assets/fotos/Celeste/03.jpg")},
+            { url: require("../assets/fotos/Celeste/04.jpg")},
+            { url: require("../assets/fotos/Celeste/05.jpg")},
+            { url: require("../assets/fotos/Celeste/06.jpg")},
+            { url: require("../assets/fotos/Celeste/07.jpg")},
+            { url: require("../assets/fotos/Celeste/08.jpg")},
+            { url: require("../assets/fotos/Celeste/09.jpg")},
+            { url: require("../assets/fotos/Celeste/10.jpg")},
+            { url: require("../assets/fotos/Celeste/11.jpg")},
+            { url: require("../assets/fotos/Celeste/12.jpg")},
+        ]
+        },
       ],
+
       active_class: 'slideInRight',
       leave_class: 'slideOutLeft',
       current: 0,

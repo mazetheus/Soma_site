@@ -117,8 +117,8 @@ export default {
   }
 
   .navbar-brand {
-    width: 8%;
-    padding: 5px;
+    width: 6%;
+    padding: 5spx;
   }
 
   .slide-text {

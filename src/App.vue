@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <navbar/>
-    <svg viewBox="0 0 30 0" xmlns="http://www.w3.org/2000/svg">
-      
-    </svg>
     <div class="container-fluid">
       <quem-somos/>
       <obras/>
@@ -12,6 +9,7 @@
     </div>
     <Footer/>
   </div>
+
 </template>
 
 <script>
