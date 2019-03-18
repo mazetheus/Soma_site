@@ -32,7 +32,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" style="color: #bbb !important;" href="https://www.instagram.com/somaengenharia/"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram']"></font-awesome-icon></a>
+            <a class="nav-link" style="color: #bbb !important;" href="https://www.instagram.com/somaengenharia/" target="_black"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram']"></font-awesome-icon></a>
           </li>
         </ul>
         <!--<ul class="navbar-nav flex-row justify-content-center flex-nowrap mt-2 mt-lg-0">
@@ -46,12 +46,17 @@
       <b-carousel id="carousel-banner"
                   class="p-0"
                   controls
-                  indicators
                   background="#fff"
                   >
         <b-carousel-slide :img-src="require('@/assets/banners/01.jpg')">
         </b-carousel-slide>
-        <b-carousel-slide :img-src="require('@/assets/banners/02.jpg')">
+        <b-carousel-slide :img-src="require('@/assets/banners/Obra01.jpg')">
+        </b-carousel-slide>
+        <b-carousel-slide :img-src="require('@/assets/banners/Obra02.jpg')">
+        </b-carousel-slide>
+        <b-carousel-slide :img-src="require('@/assets/banners/Obra03.jpg')">
+        </b-carousel-slide>
+        <b-carousel-slide :img-src="require('@/assets/banners/Obra04.jpg')">
         </b-carousel-slide>
 
       </b-carousel>
@@ -117,7 +122,7 @@ export default {
   }
 
   .navbar-brand {
-    width: 6%;
+    width: 5%;
     padding: 5spx;
   }
 
