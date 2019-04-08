@@ -1,24 +1,6 @@
 <template>
   <div class="header container-fluid p-0">
     <div class="slide">
-      <!--<img src="@/assets/header2.jpg" class="img img-fluid w-100"/>
-      <div class="slide-text text-white text-left d-flex" :style="{height: height+'px'}">
-        <div class="tst mr-auto align-self-center">
-          <div class="slide-title">
-            <h1>Você <strong>sonha</strong>,</h1>
-            <h1>a gente <strong>SOMA</strong>.</h1>
-          </div>
-
-          <button class="btn-link" @click="scroll({link: '#obras'}, $event)">
-            <div class="confira">
-              <a class="btn btn-outline-light text-center arrow-down rounded-circle">
-                <font-awesome-icon class="arrow-down-icon" icon="arrow-down"></font-awesome-icon>
-              </a>
-              <strong> Confira nosso portfólio</strong>
-            </div>
-          </button>
-        </div>
-      </div>-->
     </div>
     <nav class="navbar navbar-expand-lg navbar-light w-100">
       <a class="navbar-brand" href="/"><img src="@/assets/logo.png" class="img img-fluid"/></a>
@@ -35,11 +17,6 @@
             <a class="nav-link" style="color: #bbb !important;" href="https://www.instagram.com/somaengenharia/" target="_black"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram']"></font-awesome-icon></a>
           </li>
         </ul>
-        <!--<ul class="navbar-nav flex-row justify-content-center flex-nowrap mt-2 mt-lg-0">
-          <li class="nav-item sm-item">
-            <a class="nav-link" href="#"><font-awesome-icon :icon="{prefix: 'fab', iconName: 'instagram'}"/></a>
-          </li>
-        </ul>-->
       </div>
     </nav>
     <div class="">
@@ -196,11 +173,7 @@ export default {
     .navbar-collapse {
       background: #fff;
     }
-
-    .navbar-toggler {
-      border-color: #414141;
-    }
-
+    
     .navbar-brand {
       width: 13%;
       padding: 10px;

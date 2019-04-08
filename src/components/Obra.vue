@@ -1,7 +1,7 @@
 <template>
 	<b-row class="obra">
 		<b-col class="col-md-6 col-12 d-flex align-self-center">
-			<div class="">
+			<div class="infos">
 				<h4 class="obras-header">Portfólio <strong>SOMA</strong></h4>
 				<h5 class="obra-header-destaque text-uppercase">{{nome}}</h5>
 				<h6 class="obra-header">{{tipo}}</h6>
@@ -105,9 +105,25 @@
 
 	.carousel-inner > .item > img {
         margin: 0 auto;
-    }
+  }
 
-    .tst {
-		/*padding: 0px 8px;*/
-    }
+	@media only screen and (max-width: 768px) {
+		.obra-btn {
+			margin-top: 10px;
+			margin-right: 5px;
+			margin-left: 5px;
+			margin-bottom: 10px;
+			background: transparent;
+			border-radius: 32px;
+			border-color: #fb9527;
+			color: #575757;
+		}
+		.obra-header {
+			padding-bottom: 5px;
+		}
+		.infos{
+			padding-left: 10px;
+		}
+
+	}
 </style>

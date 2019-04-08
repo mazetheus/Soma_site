@@ -84,6 +84,9 @@
     .quemsomos {
       padding: 64px 0px;
     }
+    .tab-title-class{
+        font-size: 10px;
+    }
   }
 
   @media (max-width: 576px) {

@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'animate.css'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faMapMarkerAlt, faPhone, faCircle, faArrowDown} from '@fortawesome/free-solid-svg-icons'
-import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
+import {faFacebook, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 var Data = Object.freeze({
@@ -21,7 +21,7 @@ var Data = Object.freeze({
 
 
 library.add(faFacebook)
-library.add(faInstagram)
+library.add(faInstagram, faWhatsapp)
 library.add(faMapMarkerAlt, faPhone, faCircle, faArrowDown)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

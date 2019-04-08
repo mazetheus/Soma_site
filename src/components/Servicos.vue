@@ -4,9 +4,6 @@
       <div class="col-12 text-left align-self-center">
         <h3 class="servicos-header text-center">Serviços SOMA</h3>
         <div class="row">
-          <!--<div class="col-12" v-for="(serv,index) in servicos" :key="index">
-            <h5 class="servico text-uppercase">{{serv}}</h5>
-          </div>-->
           <ul class="serv-ul mx-auto">
             <li v-for="(serv,index) in servicos" class="serv-li" :key="index">
               <h5 class="servico"><font-awesome-icon class="circle-icon" icon="circle"></font-awesome-icon> {{serv}}</h5>
@@ -14,9 +11,6 @@
           </ul>
         </div>
       </div>
-      <!--<div class="col-md-6 col-12 align-self-center">
-        <img src="../assets/servicos.jpg" class="img img-fluid"/>
-      </div>-->
     </div>
   </div>
 </template>
@@ -29,8 +23,6 @@ export default {
       servicos: [
         "Gerenciamento de obras e projetos",
         "Construções e Reformas",
-        "Orçamentos",
-        "Avaliação de Imóveis"
       ]
     }
   }
@@ -52,7 +44,6 @@ export default {
 
 .servico {
   padding: 24px 0px 0px 0px;
-  /*font-size: 19px !important;*/
   font-size: 1.5vw;
 }
 
