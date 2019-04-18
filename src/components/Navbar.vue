@@ -35,6 +35,8 @@
         </b-carousel-slide>
         <b-carousel-slide :img-src="require('@/assets/banners/Obra04.jpg')">
         </b-carousel-slide>
+        <b-carousel-slide :img-src="require('@/assets/banners/Obra05.jpg')">
+        </b-carousel-slide>
 
       </b-carousel>
     </div>
