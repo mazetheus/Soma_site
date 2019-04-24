@@ -136,7 +136,7 @@ export default {
         nome: "Condomínio Pipa Natureza", 
         tipo: "Residencial",
         statusobra: "Concluída",
-        local: "Pipa, Tibau do Sull/RN",
+        local: "Pipa, Tibau do Sul/RN",
         conclusao: "2016",
         area: "280m²",
         arquiteto: "Luciana Fagundes",
