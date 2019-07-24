@@ -11,6 +11,9 @@
           <li v-for="(item, index) in menu" :key="index" @click="scroll(item, $event)" class="text-uppercase nav-item">
             <a class="nav-link" v-bind:href="item.link">{{item.name}}</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link trabalhe" href="/trabalheconosco" target="_black">TRABALHE CONOSCO</a>
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -35,8 +38,6 @@
         </b-carousel-slide>
         <b-carousel-slide :img-src="require('@/assets/banners/Obra04.jpg')">
         </b-carousel-slide>
-        <b-carousel-slide :img-src="require('@/assets/banners/Obra05.jpg')">
-        </b-carousel-slide>
 
       </b-carousel>
     </div>
@@ -54,7 +55,7 @@ export default {
         {name: 'quem somos', link: '#quemsomos'},
         {name: 'portfólio', link: '#obras'},
         {name: 'serviços', link: '#servicos'},
-        {name: 'contato', link: '#contato'}
+        {name: 'contato', link: '#contato'},
       ],
       width: 0,
       height: 0
@@ -84,6 +85,13 @@ export default {
 </script>
 
 <style scoped>
+
+  .trabalhe{
+    border-radius: 10px;
+  }
+  .trabalhe:hover{
+    background-color: #fb9527;
+  }
   .navbar {
     padding: 0px 48px;
     background: #fff;
